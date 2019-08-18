@@ -3,10 +3,14 @@
 # About
 We want to build a classifier which is able to detect clickbait posts on Twitter. We try to break the current state of the art accuracy (85.5%) for this dataset (spoiler: we come very close!). We will use fastai's library (which sits on top of PyTorch) to try out **transfer learning** for this classification task. Transfer learning has been used in the field of Computer Vision for quite some time now but just recently it is has been successfully applied to Natural Language Processing. More specifically, we will use fastai's **Universal Language Model Fine-tuning (ULMFiT)** approach for this task. 
 
-![twitter_clickbait](./images/twitter_clickbait.PNG)
+![ULMFiT](./images/ulmfit.png)
+Source: [Universal Language Model Fine-tuning for Text Classification](https://arxiv.org/pdf/1801.06146.pdf "ULMFiT") by Jeremy Howard and Sebastian Ruder (2018)
+
 
 # Clickbait Challenge Dataset
 Download the Clickbait Challenge dataset [here](https://www.clickbait-challenge.org "Clickbait Challenge") (latest release date: June 30, 2017). The .zip file contains `instances.jsonl` and `truth.jsonl` that we need later. Also download the unlabeled .zip.file.
+
+![twitter_clickbait](./images/twitter_clickbait.PNG)
 
 The Clickbait Challenge dataset provides a JSON file with labeled 19538 examples (Twitter posts linking a news article). This is an example Twitter post from the dataset: [Ban lifted on Madrid doping laboratory](https://twitter.com/bbcworld/status/858224473597779969?lang=en "Twitter Post") and in the JSON file it looks like this:
 
@@ -44,7 +48,7 @@ Or simply run the notebook in Google Colaboratory (there is a Colab link in the 
 
 # Steps
 
-I took inspirations from these two fastai guides, check them out for more details: [fastai.text](https://docs.fast.ai/text.html, "fastai.text") and [fastai's NLP lesson 5](https://github.com/fastai/course-nlp/blob/master/5-nn-imdb.ipynb, "fastai NLP lesson 5").
+I took inspirations from these two fastai guides, check them out for more details: [fastai.text](https://docs.fast.ai/text.html "fastai.text") and [fastai's NLP lesson 5](https://github.com/fastai/course-nlp/blob/master/5-nn-imdb.ipynb "fastai NLP lesson 5"). See more detailed instructions in the two Jupyter Notebooks respectively.
 
 ## 1) Preprocessing
 `preprocessing_csv.ipynb`
@@ -61,7 +65,7 @@ We need the data in a specific format:
 ## 2) Language Model
 `clickbait_detection.ipynb`
 
-Download a pre-trained "AWD_LSTM" model [(Merity et al. 2017)](https://arxiv.org/abs/1708.02182, "AWD_LSTM") which is already trained on the big wikitext-103 dataset (100 million tokens). Fine-tune this model with our CSV files to adapt it to our clickbait task. 
+Now we can see the "Universal Language Model Fine-tuning" (ULMFiT), a transfer learning method,  in action. Download a pre-trained "AWD_LSTM" model [(Merity et al. 2017)](https://arxiv.org/abs/1708.02182 "AWD_LSTM") which is already trained on the big wikitext-103 dataset (100 million tokens). Fine-tune this model with our CSV files to adapt it to our clickbait task. 
 
 ## 3) Classifier
 Create a classifier and we will use the encoder of our language model as the encoder of the overall clickbait architecture:
