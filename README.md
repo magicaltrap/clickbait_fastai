@@ -2,8 +2,8 @@
 
 # About
 We want to build a classifier which is able to detect clickbait posts on Twitter. We try to break the current state of the art accuracy (85.5%) for this dataset (spoiler: we come very close!). We will use fastai's library (which sits on top of PyTorch) to try out **transfer learning** for this classification task. Transfer learning has been used in the field of Computer Vision for quite some time now but just recently it is has been successfully applied to Natural Language Processing. More specifically, we will use fastai's **Universal Language Model Fine-tuning (ULMFiT)** approach for this task. 
-![twitter_clickbait](./images/twitter_clickbait.PNG)
 
+![twitter_clickbait](./images/twitter_clickbait.PNG)
 
 # Clickbait Challenge Dataset
 Download the Clickbait Challenge dataset [here](https://www.clickbait-challenge.org "Clickbait Challenge") (latest release date: June 30, 2017). The .zip file contains `instances.jsonl` and `truth.jsonl` that we need later. Also download the unlabeled .zip.file.
@@ -50,9 +50,9 @@ I took inspirations from these two fastai guides, check them out for more detail
 `preprocessing_csv.ipynb`
 
 Download the labeled and unlabeled dataset from the Clickbait Challenge homepage. Run the `preprocessing_csv.ipynb` notebook to create CSV files for our classifier later. You will end up with 3 different  CSV files:
-* CSV for the labeled data We need the data in a specific format
+* CSV for the labeled data
 * CSV for the unlabeled data
-* CSV for the a combined labeled/unlabeled data
+* CSV for the combined labeled/unlabeled data
 
 We need the data in a specific format:
 
@@ -100,11 +100,12 @@ SequentialRNN(
 ```
 
 # Results
-We achieve an accuracy of 84.5%. The current state of the art models have an accuracy of 85.5% (as of August 2019), so we are very close and within one percent. Our model was also just trained in less than an hour. This is the power of Transfer Learning in NLP.
+We achieve an accuracy of 84.5%. The current state of the art models have an accuracy of 85.5% (as of August 2019), so we are very close and within one percent. Our model was also just trained in less than an hour. This is the power of Transfer Learning in NLP!
 
 ![confusion_matrix](./images/confusion_matrix.PNG)
 
-Here are some predictions from our clickbait classifier. We can also observe that our classifier can detect clickbait or no-clickbait posts with high confidence (probability over 0.9). And in the case were the classification is a bit ambigious ("Are high-end, big-budget films the future of fashion advertising?") it outputs a mixed probability (tensor([0.4308, 0.5692])).
+
+Here are some predictions from our clickbait classifier. We can also observe that our classifier can detect clickbait or no-clickbait posts with high confidence (probability over 0.9). And in the case were the classification is a bit ambigious (**"Are high-end, big-budget films the future of fashion advertising?"**) it outputs a mixed probability (tensor([0.4308, 0.5692])).
 
 
 ![predictions](./images/clickbait_predictions.PNG)
