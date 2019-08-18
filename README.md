@@ -2,7 +2,7 @@
 
 # About
 We want to build a classifier which is able to detect clickbait posts on Twitter. We try to break the current state of the art accuracy (85.5%) for this dataset (spoiler: we come very close!). We will use fastai's library (which sits on top of PyTorch) to try out **transfer learning** for this classification task. Transfer learning has been used in the field of Computer Vision for quite some time now but just recently it is has been successfully applied to Natural Language Processing. More specifically, we will use fastai's **Universal Language Model Fine-tuning (ULMFiT)** approach for this task. 
-![twitter_clickbait](./images/)
+![twitter_clickbait](./images/twitter_clickbait.PNG)
 
 
 # Clickbait Challenge Dataset
@@ -55,7 +55,7 @@ Download the labeled and unlabeled dataset from the Clickbait Challenge homepage
 * CSV for the a combined labeled/unlabeled data
 
 We need the data in a specific format:
-![csv_file](./images/)
+![csv_file](./images/csv.PNG)
 
 ## 2) Language Model
 `clickbait_detection.ipynb`
@@ -101,8 +101,8 @@ SequentialRNN(
 # Results
 We achieve an accuracy of 84.5%. The current state of the art models have an accuracy of 85.5% (as of August 2019), so we are very close and within one percent. Our model was also just trained in less than an hour. This is the power of Transfer Learning in NLP.
 
-![confusion_matrix](./images/)
+![confusion_matrix](./images/confusion_matrix.PNG)
 
 Here are some predictions from our clickbait classifier. We can also observe that our classifier can detect clickbait or no-clickbait posts with high confidence (probability over 0.9). And in the case were the classification is a bit ambigious ("Are high-end, big-budget films the future of fashion advertising?") it outputs a mixed probability (tensor([0.4308, 0.5692])).
 
-![predictions](./images/)
+![predictions](./images/clickbait_predictions.PNG)
