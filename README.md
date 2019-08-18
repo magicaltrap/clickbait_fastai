@@ -55,6 +55,7 @@ Download the labeled and unlabeled dataset from the Clickbait Challenge homepage
 * CSV for the a combined labeled/unlabeled data
 
 We need the data in a specific format:
+
 ![csv_file](./images/csv.PNG)
 
 ## 2) Language Model
@@ -104,5 +105,6 @@ We achieve an accuracy of 84.5%. The current state of the art models have an acc
 ![confusion_matrix](./images/confusion_matrix.PNG)
 
 Here are some predictions from our clickbait classifier. We can also observe that our classifier can detect clickbait or no-clickbait posts with high confidence (probability over 0.9). And in the case were the classification is a bit ambigious ("Are high-end, big-budget films the future of fashion advertising?") it outputs a mixed probability (tensor([0.4308, 0.5692])).
+
 
 ![predictions](./images/clickbait_predictions.PNG)
