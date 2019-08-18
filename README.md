@@ -1,6 +1,4 @@
-**Note:** In an [earlier repository](https://github.com/magicaltrap/clickbait_weka, "clickbait_weka"), I used [Weka](https://www.cs.waikato.ac.nz/ml/index.html "Weka Homepage") to create a Machine Learning Classification model. This was a programming task of Sungkyunkwan University's ["Using Data Science to Detect Frauds and Fakes"](https://summer.skku.edu/_res/summer/etc/Data&Phy_A1.pdf "Class Syllabus") class. However, I was not too satisfied with the results, so I wanted to try a Deep Learning approach to get better results. Check the README.md and the Jupyter Notebooks for a detailed guide!
-
-
+**Note:** In an [earlier repository](https://github.com/magicaltrap/clickbait_weka, "clickbait_weka"), I used [Weka](https://www.cs.waikato.ac.nz/ml/index.html "Weka Homepage") to create a Machine Learning Classification model. However, I was not too satisfied with the results, so I wanted to try a Deep Learning approach to get better results.
 
 # About
 We want to build a classifier which is able to detect clickbait posts on Twitter. We try to break the current state of the art accuracy (85.5%) for this dataset (spoiler: we come very close!). We will use fastai's library (which sits on top of PyTorch) to try out **transfer learning** for this classification task. Transfer learning has been used in the field of Computer Vision for quite some time now but just recently it is has been successfully applied to Natural Language Processing. More specifically, we will use fastai's **Universal Language Model Fine-tuning (ULMFiT)** approach for this task. 
@@ -8,9 +6,9 @@ We want to build a classifier which is able to detect clickbait posts on Twitter
 
 
 # Clickbait Challenge Dataset
-Download the Clickbait Challenge dataset [here](https://www.clickbait-challenge.org "Clickbait Challenge") (latest release date: June 30, 2017). The .zip file contains `instances.jsonl` and `truth.jsonl` that we need later. Also download the `unlabeled` .zip.file.
+Download the Clickbait Challenge dataset [here](https://www.clickbait-challenge.org "Clickbait Challenge") (latest release date: June 30, 2017). The .zip file contains `instances.jsonl` and `truth.jsonl` that we need later. Also download the unlabeled .zip.file.
 
-The Clickbait Challenge dataset provides a JSON file with 19538 examples (Twitter posts linking a news article). This is an example Twitter post from the dataset: [Ban lifted on Madrid doping laboratory](https://twitter.com/bbcworld/status/858224473597779969?lang=en "Twitter Post") and in the JSON file it looks like this:
+The Clickbait Challenge dataset provides a JSON file with labeled 19538 examples (Twitter posts linking a news article). This is an example Twitter post from the dataset: [Ban lifted on Madrid doping laboratory](https://twitter.com/bbcworld/status/858224473597779969?lang=en "Twitter Post") and in the JSON file it looks like this:
 
 ```
 from instances.jsonl
@@ -40,7 +38,7 @@ To make it simple, we will only use the `postText` key from the dataset for now.
 * Python 3.6 or later
 * `conda install -c pytorch -c fastai fastai`
 
-Or simply run the notebook in Google Colaboratory (there is a Colab link in the two Jupyter Notebook) with this line:
+Or simply run the notebook in Google Colaboratory (there is a Colab link in the two Jupyter Notebook) with this line to setup everything:
 * `!curl -s https://course.fast.ai/setup/colab | bash`
 
 
@@ -49,6 +47,7 @@ Or simply run the notebook in Google Colaboratory (there is a Colab link in the 
 I took inspirations from these two fastai guides, check them out for more details: [fastai.text](https://docs.fast.ai/text.html, "fastai.text") and [fastai's NLP lesson 5](https://github.com/fastai/course-nlp/blob/master/5-nn-imdb.ipynb, "fastai NLP lesson 5").
 
 ## 1) Preprocessing
+`preprocessing_csv.ipynb`
 
 Download the labeled and unlabeled dataset from the Clickbait Challenge homepage. Run the `preprocessing_csv.ipynb` notebook to create CSV files for our classifier later. You will end up with 3 different  CSV files:
 * CSV for the labeled data We need the data in a specific format
@@ -59,6 +58,7 @@ We need the data in a specific format:
 ![csv_file](./images/)
 
 ## 2) Language Model
+`clickbait_detection.ipynb`
 
 Download a pre-trained "AWD_LSTM" model [(Merity et al. 2017)](https://arxiv.org/abs/1708.02182, "AWD_LSTM") which is already trained on the big wikitext-103 dataset (100 million tokens). Fine-tune this model with our CSV files to adapt it to our clickbait task. 
 
