@@ -99,10 +99,9 @@ SequentialRNN(
 ```
 
 # Results
-We achieve an accuracy of 84.5%. The current state of the art models have a accuracy of 0.855 (as of August 2019), so we are very close and within one percent! Our model was also just trained in less than an hour! This is the power of Transfer Learning in NLP!
+We achieve an accuracy of 84.5%. The current state of the art models have an accuracy of 85.5% (as of August 2019), so we are very close and within one percent. Our model was also just trained in less than an hour. This is the power of Transfer Learning in NLP.
 
 ![confusion_matrix](./images/)
-
 
 Here are some predictions from our clickbait classifier. We can also observe that our classifier can detect clickbait or no-clickbait posts with high confidence (probability over 0.9). And in the case were the classification is a bit ambigious ("Are high-end, big-budget films the future of fashion advertising?") it outputs a mixed probability (tensor([0.4308, 0.5692])).
 
