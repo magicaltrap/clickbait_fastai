@@ -44,7 +44,7 @@ To make it simple, we will only use the `postText` key from the dataset for now.
 * Python 3.6 or later
 * `conda install -c pytorch -c fastai fastai`
 
-Or simply run the notebook in Google Colaboratory (there is a Colab link in the two Jupyter Notebook) with this line to setup everything:
+Or simply run the notebook in Google Colaboratory (there is a Colab link in the two Jupyter Notebooks) with this line to setup everything in Colaboratory:
 * `!curl -s https://course.fast.ai/setup/colab | bash`
 
 
