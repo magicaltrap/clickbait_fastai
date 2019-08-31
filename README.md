@@ -1,4 +1,6 @@
-**Note:** In an [earlier repository](https://github.com/magicaltrap/clickbait_weka, "clickbait_weka"), I used [Weka](https://www.cs.waikato.ac.nz/ml/index.html "Weka Homepage") to create a Machine Learning Classification model. However, I was not too satisfied with the results, so I wanted to try a Deep Learning approach to get better results.
+**Note:** In an [earlier repository](https://github.com/magicaltrap/clickbait_weka "clickbait_weka"), I used [Weka](https://www.cs.waikato.ac.nz/ml/index.html "Weka Homepage") to create a Machine Learning Classification model. However, I was not too satisfied with the results, so I wanted to try a Deep Learning approach to get better results.
+
+This repository is part of a programming task of Sungkyunkwan University's ["Using Data Science to Detect Frauds and Fakes"](https://summer.skku.edu/_res/summer/etc/Data&Phy_A1.pdf "Class Syllabus") class.
 
 # About
 We want to build a classifier which is able to detect clickbait posts on Twitter. We try to break the current state of the art accuracy (85.5%) for this dataset (spoiler: we come very close!). We will use fastai's library (which sits on top of PyTorch) to try out **transfer learning** for this classification task. Transfer learning has been used in the field of Computer Vision for quite some time now but just recently it is has been successfully applied to Natural Language Processing. More specifically, we will use fastai's **Universal Language Model Fine-tuning (ULMFiT)** approach for this task. 
