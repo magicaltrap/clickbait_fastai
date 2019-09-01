@@ -50,7 +50,7 @@ Or simply run the notebook in Google Colaboratory (there is a Colab link in the 
 
 # Steps
 
-I took inspirations from these two fastai guides, check them out for more details: [fastai.text](https://docs.fast.ai/text.html "fastai.text") and [fastai's NLP lesson 5](https://github.com/fastai/course-nlp/blob/master/5-nn-imdb.ipynb "fastai NLP lesson 5"). See more detailed instructions in the two Jupyter Notebooks respectively.
+I took inspirations from these two fastai guides, check them out for more details: [fastai.text](https://docs.fast.ai/text.html "fastai.text") and [fastai's NLP lesson 5](https://github.com/fastai/course-nlp/blob/master/5-nn-imdb.ipynb "fastai NLP lesson 5").
 
 ## 1) Preprocessing
 `preprocessing_csv.ipynb`
