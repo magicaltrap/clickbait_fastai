@@ -14,7 +14,7 @@ Download the Clickbait Challenge dataset [here](https://www.clickbait-challenge.
 
 ![twitter_clickbait](./images/twitter_clickbait.PNG)
 
-The Clickbait Challenge dataset provides a JSON file with labeled 19538 examples (Twitter posts linking a news article). This is an example Twitter post from the dataset: [Ban lifted on Madrid doping laboratory](https://twitter.com/bbcworld/status/858224473597779969?lang=en "Twitter Post") and in the JSON file it looks like this:
+The Clickbait Challenge dataset provides a JSON file with 19538 labeled examples (Twitter posts linking a news article). This is an example Twitter post from the dataset: [Ban lifted on Madrid doping laboratory](https://twitter.com/bbcworld/status/858224473597779969?lang=en "Twitter Post") and in the JSON file it looks like this:
 
 ```
 from instances.jsonl
