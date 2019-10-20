@@ -106,7 +106,8 @@ SequentialRNN(
 ```
 
 # Results
-We achieve an accuracy of 84.5%. The current state of the art models have an accuracy of 85.5% (as of August 2019), so we are very close and within one percent. Our model was also just trained in less than an hour. This is the power of Transfer Learning in NLP!
+We achieve an accuracy of 84.5%. The current state of the art models have an accuracy of 85.5% (as of August 2019). Our model was also just trained in less than an hour. This is the power of Transfer Learning in NLP! Our scores for other relevant metrics are as follows: Precision = 0.717, Recall = 0.625 , F1 = 0.668. These are very competitive results if you take a look at the [Clickbait Challenge leaderboards.](https://www.clickbait-challenge.org/#results)
+
 
 ![confusion_matrix](./images/confusion_matrix.PNG)
 
